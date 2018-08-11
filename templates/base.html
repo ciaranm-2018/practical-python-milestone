@@ -5,13 +5,14 @@
 
     <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/clean-blog.min.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" type="text/css" />
 </head>
 
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Harry Potter Riddles</a>
+            <a class="navbar-brand" href="{{ url_for('index') }}">Harry Potter Riddles</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -22,7 +23,7 @@
                         <a class="nav-link" href="{{ url_for('index') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('about') }}">About</a>
+                        <a class="nav-link" href="{{ url_for('about') }}">Riddles</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
@@ -33,7 +34,7 @@
     </nav>
 
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('https://c1.staticflickr.com/9/8466/8126530365_4569c764bd_b.jpg">
+    <header class="masthead" style="background-image: url('https://c1.staticflickr.com/9/8466/8126530365_4569c764bd_b.jpg')">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
@@ -49,8 +50,7 @@
 
     <!-- Main Content -->
     <div class="container">
-        
-        
+        {% block content %} {% endblock %}
     </div>
 
     <hr>
@@ -86,7 +86,7 @@
                             </a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted">Copyright &copy; Ciaran Mitchell 2018</p>
+                    <p class="copyright text-muted">Copyright &copy; Your Website 2017</p>
                 </div>
             </div>
         </div>

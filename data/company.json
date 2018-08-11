@@ -21,8 +21,7 @@
   },
   {
     "name": "riddle_4",
-    "question":
-      "Towards the Slytherin students, people say I showed bias, I am the son of Eileen and Tobias",
+    "question":"Towards the Slytherin students, people say I showed bias, I am the son of Eileen and Tobias",
     "answer": "snape"
   },
   {
@@ -37,8 +36,8 @@
   },
   {
     "name": "riddle_7",
-    "question": "James to some, to others I'm the father of Harry, but as a Marauder, this was the name given to me.",
-    "answer": "prongs"
+    "question": "This shapeshifter lurks in dark places, and takes the form of your deepest fears, see the terror as it nears?",
+    "answer": "boggart"
   },
   {
     "name": "riddle_8",
@@ -58,11 +57,6 @@
   },
   {
     "name": "riddle_11",
-    "question": "Cauldron Cakes, Chocolate Frogs...they both hit the spot, but Harry's favourite treat, is a tart made of what?",
-    "answer": "treacle"
-  },
-    {
-    "name": "riddle_12",
     "question": "Red of hair, and loyal to the end, but what is the middle name of Harry's best friend?",
     "answer": "bilius"
   }
