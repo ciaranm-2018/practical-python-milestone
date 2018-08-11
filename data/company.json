@@ -1,0 +1,69 @@
+[
+  {
+    "name": "riddle_0",
+    "question": "Please come closer, you must understand, I simply cannot see. I've lived long, far from your school, with my humongous family.",
+    "answer": "aragog"
+  },
+  {
+    "name": "riddle_1",
+    "question": "In old English, my name means bumblebee, and the Order of Merlin First Class was given to me.",
+    "answer": "dumbledore"
+  },
+  {
+    "name": "riddle_2",
+    "question": "Our victory in the 1994 Quidditch World Cup drew cheers from some, but certainly not from Viktor Krum.",
+    "answer": "ireland"
+  },
+  {
+    "name": "riddle_3",
+    "question": "Going to the kitchens? Well don't forget! Tickle me, or access you will not get.",
+    "answer": "pear"
+  },
+  {
+    "name": "riddle_4",
+    "question":
+      "Towards the Slytherin students, people say I showed bias, I am the son of Eileen and Tobias",
+    "answer": "snape"
+  },
+  {
+    "name": "riddle_5",
+    "question": "My code name on 'Potter Watch' was Romulus, surely you can guess who I am, without too much fuss?",
+    "answer": "lupin"
+  },
+  {
+    "name": "riddle_6",
+    "question": "Enter Hogwarts and 142 of these you can see, just be sure to tread carefully.",
+    "answer": "stairs"
+  },
+  {
+    "name": "riddle_7",
+    "question": "James to some, to others I'm the father of Harry, but as a Marauder, this was the name given to me.",
+    "answer": "prongs"
+  },
+  {
+    "name": "riddle_8",
+    "question": "Scared of the dark? Save yourself the fright, utter this word to help you see the light.",
+    "answer": "lumos"
+  },
+  {
+    "name": "riddle_9",
+    "question": "Harry used Polyjuice potion and his body became fuller, but add one of Harry's hairs to the potion, and it will become this colour.",
+    "answer": "gold"
+  },
+  {
+    "name": "riddle_10",
+    "question":
+      "Buckbeak was a hipogriff, considered by Hagrid to be tame, but after the death of Sirius, he was given what name?",
+    "answer": "witherwings"
+  },
+  {
+    "name": "riddle_11",
+    "question": "Cauldron Cakes, Chocolate Frogs...they both hit the spot, but Harry's favourite treat, is a tart made of what?",
+    "answer": "treacle"
+  },
+    {
+    "name": "riddle_12",
+    "question": "Red of hair, and loyal to the end, but what is the middle name of Harry's best friend?",
+    "answer": "bilius"
+  }
+]
