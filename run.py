@@ -9,7 +9,7 @@ app.secret_key = 'some_secret'
 @app.route('/', methods=["GET", "POST"])
 def index():
     if request.method == "POST":
-        flash("Thanks {}, enjoy the riddles!".format(request.form["name"]))
+        flash("Thanks {}, enjoy the riddles".format(request.form["name"]))
     return render_template("index.html")
 
 
@@ -19,6 +19,7 @@ def about():
     with open("data/company.json", "r") as json_data:
         data = json.load(json_data)
     return render_template("about.html", page_heading="Riddles", company=data)
+    
 
 
 @app.route('/contact', methods=["GET", "POST"])

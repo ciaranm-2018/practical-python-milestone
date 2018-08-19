@@ -1,9 +1,18 @@
 {% extends 'base.html' %} {% block content %}
 <h2>{{ page_heading }}</h2>
+<p>Please Enter a Username:</p>
+          
+          <form name="sentMessage" id="contactForm">
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Name</label>
+                <input type="text" class="form-control" placeholder="Name" name="name" id="name" required data-validation-required-message="Please enter your name.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div id="success"></div>
+        </div>
 
-<p>Harry Potter is a series of fantasy novels written by British author J. K. Rowling. The novels chronicle the lives of a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry. 
-The main story arc concerns Harry's struggle against Lord Voldemort, a dark wizard who intends to become immortal, overthrow the wizard governing body known as the Ministry of Magic, and subjugate all wizards and Muggles (non-magical people).
-</br> Below are twelve wickedly tricky riddles from the wizarding world of Harry Potter. Good Luck!</p>
 
 {% for member in company %}
  {% if loop.index % 2 != 0 %}
@@ -12,7 +21,7 @@ The main story arc concerns Harry's struggle against Lord Voldemort, a dark wiza
                     <h3><a href="/about/{{ member.url }}">{{ loop.index }}. {{ member.name }}</a></h3>
                     <p>{{ member.description }}</p>
                     <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="riddle_guess col-lg-8 col-md-10 mx-auto">
           <p>Please enter your guess.</p>
           
           <form name="sentMessage" id="contactForm">
@@ -24,9 +33,6 @@ The main story arc concerns Harry's struggle against Lord Voldemort, a dark wiza
               </div>
             </div>
             <div id="success"></div>
-            <div class="form-group">
-              <button type="submit" class="btn btn-primary" id="sendMessageButton">Submit</button>
-            </div>
         </div>
       </div>
                 </div>
@@ -43,7 +49,7 @@ The main story arc concerns Harry's struggle against Lord Voldemort, a dark wiza
                     <h3><a href="/about/{{ member.url }}">{{ loop.index }}. {{ member.name }}</a></h3>
                     <p>{{ member.description }}</p>
                     <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="riddle_guess col-lg-8 col-md-10 mx-auto">
           <p>Please enter your guess.</p>
           
           <form name="sentMessage" id="contactForm">
@@ -55,16 +61,24 @@ The main story arc concerns Harry's struggle against Lord Voldemort, a dark wiza
               </div>
             </div>
             <div id="success"></div>
-            <div class="form-group">
-              <button type="submit" class="btn btn-primary" id="sendMessageButton">Submit</button>
-            </div>
         </div>
       </div>
                 </div>
             </div>
+    
         {% endif %} 
         {% if loop.index != 12 %}
             <hr class="featurette-divider"> 
         {% endif %} 
     {% endfor %} 
+<hr class="featurette-divider"> 
+         
+         
+	  <div class="form-group">
+		  <button type="submit" class="btn btn-primary" id="sendMessageButton">Submit Answers</button>
+	  </div>
+  </div>
+                
+    
+    
 {% endblock %}
