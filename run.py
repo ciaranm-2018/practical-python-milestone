@@ -19,7 +19,6 @@ def about():
     with open("data/company.json", "r") as json_data:
         data = json.load(json_data)
     return render_template("about.html", page_heading="Riddles", company=data)
-    
 
 
 @app.route('/contact', methods=["GET", "POST"])
