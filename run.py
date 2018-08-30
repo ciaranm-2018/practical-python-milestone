@@ -1,9 +1,32 @@
-import os
-import json
-from flask import Flask, render_template, request, flash
+import csv, datetime, json, os, random
+from dateutil import parser
+from flask import flash, Flask, redirect, render_template, request
+from flask_mail import Mail, Message
+from flask_table import Table, Col
+import urllib
+import urllib2
+
 
 app = Flask(__name__)
 app.secret_key = 'some_secret'
+
+mail_settings = {
+    "MAIL_SERVER": 'smtp.mail.yahoo.com',
+    "MAIL_PORT": 465,
+    "MAIL_USE_TLS": False,
+    "MAIL_USE_SSL": True,
+    "MAIL_USERNAME": 'c.mitch2018@yahoo.com',
+    "MAIL_PASSWORD": 'Signup111'
+}
+
+app.config.update(mail_settings)
+mail = Mail(app)
+
+class Record(object):
+    def __init__(self, name, score, date):
+        self.name = name
+        self.score = score
+        self.date = date
 
 
 @app.route('/', methods=["GET", "POST"])
