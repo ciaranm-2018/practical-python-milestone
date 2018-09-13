@@ -167,9 +167,23 @@ def records():
     return render_template("records.html", records_html=records_html)
 
 
+# On the contact page a user can enter a message that gets emailed to the admin's address.
+@app.route('/contact', methods=["GET", "POST"])
+def contact():
+    if request.method == "POST":
+        name = request.form["name"]
+        email_address = request.form["email_address"]
+        message = request.form["message"]
+        
+        with app.app_context():
+            msg = Message(subject="Hello",
+                      sender=app.config.get("MAIL_USERNAME"),
+                      recipients=[email_address],
+                      body=message)
+        mail.send(msg)
+        flash("Thanks {{name}}, we have received your message!")
+    return render_template("contact.html", page_heading="Contact")
 
 
 if __name__ == '__main__':
-    app.run(host=os.environ.get('IP'),
-            port=int(os.environ.get('PORT')),
-            debug=True)
+    app.run(host=os.environ.get('IP'),port=int(os.environ.get('PORT')),debug=True)

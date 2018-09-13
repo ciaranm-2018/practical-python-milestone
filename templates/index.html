@@ -1,11 +1,21 @@
 {% extends 'base.html' %} {% block content %}
-<h2>Home</h2>
 
-<div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-        <p>On this site you will find twelve wickedly tricky <a href="about" class="link"> riddles</a> from the wizarding world of Harry Potter. Good Luck!</p>
+<h2>Welcome to the Harry Potter Quiz</h2>
+
+    <div class="main">
+        <div class="overlay">
+            <div class="container">
+                <p class="sub">Enter a username </pwday stock>
+                <div >
+                    <form method="POST" class="form-inline">
+                        <input type="text" class="form-control" placeholder="username" name="username" id="username">
+                        <button class="btn btn-secondary">continue </button>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
-    
-
+        
+         <hr class="featurette-divider"> 
+         </div>
+         
 {% endblock %}
