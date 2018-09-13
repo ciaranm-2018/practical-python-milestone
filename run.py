@@ -130,6 +130,31 @@ def user(username):
         riddle_index += 1
 
 
+# Check if the final riddle has been answered, if so, redirect to the result.html page/
+    if riddle_index > 4:
+        # Create message based on score.
+        message = create_result_message(username, score)
+        
+        # Remove any commas from the username, as they will corrupt the file we are writing to.
+        username = username.replace(',','')
+        
+        now = datetime.datetime.now()
+        
+        # Store the user's name, score and the current time in the results.txt file.
+        #record = Record(username, str(score), str(now))
+        record = username + ',' + str(score) + ',' + str(now) +'\n'
+        filename='data/records.txt'
+        write_to_file(filename, record)
+     
+        return render_template("result.html", **locals());
+        
+    riddle=riddles[riddle_numbers[riddle_index]]["description"]
+    image_source = riddles[riddle_numbers[riddle_index]]["image_source"]
+    alt_image_text = riddles[riddle_numbers[riddle_index]]["name"] 
+        
+    return render_template("game.html", username=username, riddle=riddle, image_source=image_source, 
+    alt_image_text=alt_image_text, score=score, riddle_index=riddle_index, riddle_numbers_string=riddle_numbers_string)
+
 
 
 
