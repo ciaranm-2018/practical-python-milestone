@@ -22,11 +22,13 @@ mail_settings = {
 app.config.update(mail_settings)
 mail = Mail(app)
 
+
 class Record(object):
     def __init__(self, name, score, date):
         self.name = name
         self.score = score
         self.date = date
+        
         
 def write_to_file(filename, data):
     with open(filename, "a") as filehandle:
@@ -54,6 +56,7 @@ def create_result_message(username, score):
         message = "Better luck next time " + username + ", you got (" + str(score) + "/5)."
         
     return message
+   
     
 # Generate a HTML table for the leaderboard.
 def generate_html_table():
@@ -99,27 +102,34 @@ def user(username):
     riddle_index = 0
     score = 0;
 
+    # Randomly select 5 of the riddles and convert the resulting array into a string.
+    # We do this so that we can store the values using an input hidden form field.
+    riddle_numbers = random.sample(range(0, 12), 5)
+    riddle_numbers_string = str(riddle_numbers)
+    riddle_numbers_string = riddle_numbers_string.replace('[','')
+    riddle_numbers_string = riddle_numbers_string.replace(']','')
+    riddle_numbers_string = riddle_numbers_string.replace(' ','')
 
-@app.route('/', methods=["GET", "POST"])
-def index():
     if request.method == "POST":
-        flash("Thanks {}, enjoy the riddles".format(request.form["name"]))
-    return render_template("index.html")
+        # Get the riddles from a hidden field passed in form and convert from string to array.
+        riddle_numbers_string = request.form["riddle_numbers_string"]
+        riddle_numbers = map(int, riddle_numbers_string.split(','))
+        
+        # Get riddle index and score from hidden field passed in form.
+        riddle_index = int(request.form["riddle_index"])
+        score = int(request.form["score"])
+        
+        # Convert to lowercase, so correct answers will be accepted, regardless of case.
+        user_response = request.form["message"].lower()
+
+        # Compare the user's answer to the correct answer of the riddle
+        if riddles[riddle_numbers[riddle_index]]["answer"] == user_response:
+            score += 1
+        
+        # Progress to next riddle.    
+        riddle_index += 1
 
 
-@app.route('/about')
-def about():
-    data = []
-    with open("data/company.json", "r") as json_data:
-        data = json.load(json_data)
-    return render_template("about.html", page_heading="Riddles", company=data)
-
-
-@app.route('/contact', methods=["GET", "POST"])
-def contact():
-    if request.method == "POST":
-        flash("Thanks {}, we have received your message!".format(request.form["name"]))
-    return render_template("contact.html", page_heading="Contact")
 
 
 
