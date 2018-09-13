@@ -155,6 +155,16 @@ def user(username):
     return render_template("game.html", username=username, riddle=riddle, image_source=image_source, 
     alt_image_text=alt_image_text, score=score, riddle_index=riddle_index, riddle_numbers_string=riddle_numbers_string)
 
+# Display a leaderboard of scores.
+@app.route('/records', methods=["GET", "POST"])
+def records():
+    # Read in the scores from records.txt
+    records = generate_html_table();
+    
+    # records_html = generate_html_table(records)
+    records_html = records
+
+    return render_template("records.html", records_html=records_html)
 
 
 
