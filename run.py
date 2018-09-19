@@ -50,7 +50,7 @@ def read_from_csv_file(filename):
 def create_result_message(username, score):
     if (score == 5):
         message = "Well done " + username +", you got a perfect score (5/5)!"
-    elif (score > 2):
+    elif (score > 4):
         message = "Well done " + username +", you got (" + str(score) + "/5)."
     else:
         message = "Better luck next time " + username + ", you got (" + str(score) + "/5)."
@@ -176,14 +176,12 @@ def contact():
         message = request.form["message"]
         
         with app.app_context():
-            msg = Message(subject="Hello",
-                      sender=app.config.get("MAIL_USERNAME"),
-                      recipients=[email_address],
-                      body=message)
+            msg = Message('Hello', sender='c.mitch2018@yahoo.com',recipients=['c.mitch2018@yahoo.com'])
         mail.send(msg)
-        flash("Thanks {{name}}, we have received your message!")
+        flash("Thanks {{name}}, your message has been sent!")
     return render_template("contact.html", page_heading="Contact")
 
 
 if __name__ == '__main__':
-    app.run(host=os.environ.get('IP'),port=int(os.environ.get('PORT')),debug=True)
+    app.run(host=os.environ.get('IP'), port=int(os.environ.get('PORT')),debug=True)
+    
