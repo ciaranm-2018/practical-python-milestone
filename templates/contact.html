@@ -1,7 +1,15 @@
 {% extends 'base.html' %} {% block content %}
 
 <h2>{{ page_heading }}</h2>
-
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}{% block body %}{% endblock %}
 <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <p>Have you got any more Harry Potter riddles? Fill out the form below to send me your riddles and I will get back to you as soon as possible!</p>
@@ -37,5 +45,5 @@
         </div>
       </div>
     </div>
-
+ 
 {% endblock %}

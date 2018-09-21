@@ -178,10 +178,9 @@ def contact():
         with app.app_context():
             msg = Message('Hello', sender='c.mitch2018@yahoo.com',recipients=['c.mitch2018@yahoo.com'])
         mail.send(msg)
-        flash("Thanks {{name}}, your message has been sent!")
+        flash("Thanks, your message has been sent!")
     return render_template("contact.html", page_heading="Contact")
 
 
 if __name__ == '__main__':
-    app.run(host=os.environ.get('IP'), port=int(os.environ.get('PORT')),debug=True)
-    
+    app.run(host=os.environ.get('IP'), port=int(os.environ.get('PORT')), debug=True)   
