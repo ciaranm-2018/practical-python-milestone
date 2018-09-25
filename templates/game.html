@@ -1,29 +1,27 @@
 {% extends 'base.html' %} {% block content %}
 
-    <div class="row featurette">
-        <div class="col-md-7">
+<div class="row featurette">
+    <div class="col-md-7">
         <h3>Hi {{ username }}</h3>
-        <p class="font-italic">Riddle {{ (riddle_index + 1)}}/5</a></h3>
-        <p>{{ riddle }}</p>
+        <p class="font-italic">Riddle {{ (riddle_index + 1)}}/5</a>
+            </h3>
+            <p>{{ riddle }}</p>
             <div class="row">
                 <div class="riddle_guess col-lg-8 col-md-10 mx-auto">
-                <form method="POST" class="form-inline">
-                    <input type="text" class="form-control" placeholder="answer" name="message" id="message">
-                    <input type="hidden" name="score" id="result" value={{ score }}>
-                    <input type="hidden" name="riddle_index" id="riddle_index" value={{riddle_index}}>
-                    <input type="hidden" name="riddle_numbers_string" id="riddle_numbers_string" value={{riddle_numbers_string}}>
-                    <button class="btn btn-secondary riddles_button">Enter</button>
-                </form>
+                    <form method="POST" class="form-inline">
+                        <input type="text" class="form-control" placeholder="answer" name="message" id="message">
+                        <input type="hidden" name="score" id="result" value={{ score }}>
+                        <input type="hidden" name="riddle_index" id="riddle_index" value={{riddle_index}}>
+                        <input type="hidden" name="riddle_numbers_string" id="riddle_numbers_string" value={{riddle_numbers_string}}>
+                        <button class="btn btn-secondary riddles_button">Enter</button>
+                    </form>
                 </div>
-              </div>
             </div>
-            <div class="col-md-5">
-                <img class="featurette-image img-responsive" src=" {{ image_source }}" 
-                alt="Picture of  {{ alt_image_text }}">
-            </div>
-        </div>
     </div>
-    
+    <div class="col-md-5">
+        <img class="featurette-image img-responsive" src=" {{ image_source }}" alt="Picture of  {{ alt_image_text }}">
+    </div>
+</div>
+</div>
+
 {% endblock %}
-    
-    

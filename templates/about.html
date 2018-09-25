@@ -1,84 +1,76 @@
 {% extends 'base.html' %} {% block content %}
 <h2>{{ page_heading }}</h2>
 <p>Please Enter a Username:</p>
-          
-          <form name="sentMessage" id="contactForm">
-            <div class="col-md-7">
-              
-                <label>Name</label>
-                <input type="text" class="form-control" placeholder="Name" name="name" id="name" required data-validation-required-message="Please enter your name.">
-                <p class="help-block text-danger"></p>
-              
-            </div>
-            <div id="success"></div>
-        </div>
 
+<form name="sentMessage" id="contactForm">
+    <div class="col-md-7">
 
-{% for member in company %}
- {% if loop.index % 2 != 0 %}
-            <div class="row featurette">
-                <div class="col-md-7">
-                    <h3><a href="/about/{{ member.url }}">{{ loop.index }}. {{ member.name }}</a></h3>
-                    <p>{{ member.description }}</p>
-                    <div class="row">
-        <div class="riddle_guess col-lg-8 col-md-10 mx-auto">
-          <p>Please enter your guess.</p>
-          
-          <form name="sentMessage" id="contactForm">
-            <div class="control-group">
-              <div class="form-group floating-label-form-group controls">
-                <label>Answer</label>
-                <input type="text" class="form-control" placeholder="Answer" id="Answer" required data-validation-required-message="Please enter your guess.">
-                <p class="help-block text-danger"></p>
-              </div>
+        <label>Name</label>
+        <input type="text" class="form-control" placeholder="Name" name="name" id="name" required data-validation-required-message="Please enter your name.">
+        <p class="help-block text-danger"></p>
+
+    </div>
+    <div id="success"></div>
+    </div>
+
+    {% for member in company %} {% if loop.index % 2 != 0 %}
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h3><a href="/about/{{ member.url }}">{{ loop.index }}. {{ member.name }}</a></h3>
+            <p>{{ member.description }}</p>
+            <div class="row">
+                <div class="riddle_guess col-lg-8 col-md-10 mx-auto">
+                    <p>Please enter your guess.</p>
+
+                    <form name="sentMessage" id="contactForm">
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls">
+                                <label>Answer</label>
+                                <input type="text" class="form-control" placeholder="Answer" id="Answer" required data-validation-required-message="Please enter your guess.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div id="success"></div>
+                </div>
             </div>
-            <div id="success"></div>
         </div>
-      </div>
-                </div>
-                <div class="col-md-5">
-                    <img class="featurette-image img-responsive" src="{{ member.image_source }}" alt="Picture of {{ member.name }}">
-                </div>
-            </div>
-        {% else %}
-            <div class="row featurette">
-                <div class="col-md-5">
-                    <img class="featurette-image img-responsive" src="{{ member.image_source }}" alt="Picture of {{ member.name }}">
-                </div>
-                <div class="col-md-7">
-                    <h3><a href="/about/{{ member.url }}">{{ loop.index }}. {{ member.name }}</a></h3>
-                    <p>{{ member.description }}</p>
-                    <div class="row">
-        <div class="riddle_guess col-lg-8 col-md-10 mx-auto">
-          <p>Please enter your guess.</p>
-          
-          <form name="sentMessage" id="contactForm">
-            <div class="control-group">
-              <div class="form-group floating-label-form-group controls">
-                <label>Answer</label>
-                <input type="text" class="form-control" placeholder="Answer" id="Answer" required data-validation-required-message="Please enter your guess.">
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-            <div id="success"></div>
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="{{ member.image_source }}" alt="Picture of {{ member.name }}">
         </div>
-      </div>
+    </div>
+    {% else %}
+    <div class="row featurette">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="{{ member.image_source }}" alt="Picture of {{ member.name }}">
+        </div>
+        <div class="col-md-7">
+            <h3><a href="/about/{{ member.url }}">{{ loop.index }}. {{ member.name }}</a></h3>
+            <p>{{ member.description }}</p>
+            <div class="row">
+                <div class="riddle_guess col-lg-8 col-md-10 mx-auto">
+                    <p>Please enter your guess.</p>
+
+                    <form name="sentMessage" id="contactForm">
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls">
+                                <label>Answer</label>
+                                <input type="text" class="form-control" placeholder="Answer" id="Answer" required data-validation-required-message="Please enter your guess.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div id="success"></div>
                 </div>
             </div>
-    
-        {% endif %} 
-        {% if loop.index != 12 %}
-            <hr class="featurette-divider"> 
-        {% endif %} 
-    {% endfor %} 
-<hr class="featurette-divider"> 
-         
-         
-	  <div class="form-group">
-		  <button type="submit" class="btn btn-primary" id="sendMessageButton">Submit Answers</button>
-	  </div>
-  </div>
-                
-    
-    
-{% endblock %}
+        </div>
+    </div>
+
+    {% endif %} {% if loop.index != 12 %}
+    <hr class="featurette-divider"> {% endif %} {% endfor %}
+    <hr class="featurette-divider">
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary" id="sendMessageButton">Submit Answers</button>
+    </div>
+    </div>
+
+    {% endblock %}
