@@ -3,6 +3,7 @@ from dateutil import parser
 from flask import flash, Flask, redirect, render_template, request
 from flask_mail import Mail, Message
 from flask_table import Table, Col
+from itertools import imap
 import urllib
 try:
     import urllib.request as urllib2
