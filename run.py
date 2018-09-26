@@ -180,7 +180,9 @@ def contact():
         message = request.form["message"]
         
         with app.app_context():
-            msg = Message('', sender='c.mitch2018@yahoo.com',recipients=['c.mitch2018@yahoo.com'], body=message)
+            msg = Message(subject='Hello',
+            sender='c.mitch2018@yahoo.com',
+            recipients=['c.mitch2018@yahoo.com'], body=message)
         mail.send(msg)
         flash("Thanks, your message has been sent!")
     return render_template("contact.html", page_heading="Contact")
