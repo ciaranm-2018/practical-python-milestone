@@ -20,7 +20,7 @@ score, and their name and score is recorded on the leaderboard.
 A record of the users and their scores is contained in records.txt.
 
 Users are also allowed to suggest their own riddles to be included in the site.
-The can do this via the contact.html page. All messages will be sent to my
+They can do this via the contact page. All messages will be sent to my
 personal email address. I have currently set up the page so that the sender's address
 defaults to my address also, but it can be set up to work with any email address.
 
@@ -38,7 +38,7 @@ if the user obtains a score of less than 5.
 Ensure that the user's username and score are recorded on the leaderboard in numerical order.
 This data is stored in records.txt.
 
-Ensure that 'please fill out this field' is returned when the user fails to input a name
+Ensure that 'please fill out this field' is returned when the user fails to input a name,
 e-mail address or message.
 
 Ensure that email addresses will not be accepted without the '@' character.
