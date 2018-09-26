@@ -3,7 +3,6 @@ from dateutil import parser
 from flask import flash, Flask, redirect, render_template, request
 from flask_mail import Mail, Message
 from flask_table import Table, Col
-from itertools import imap
 import urllib
 try:
     import urllib.request as urllib2
@@ -118,7 +117,7 @@ def user(username):
     if request.method == "POST":
         # Get the riddles from a hidden field passed in form and convert from string to array.
         riddle_numbers_string = request.form["riddle_numbers_string"]
-        riddle_numbers = map(int, riddle_numbers_string.split(','))
+        riddle_numbers = list(map(int, riddle_numbers_string.split(',')))
         
         # Get riddle index and score from hidden field passed in form.
         riddle_index = int(request.form["riddle_index"])
