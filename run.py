@@ -4,7 +4,7 @@ from flask import flash, Flask, redirect, render_template, request
 from flask_mail import Mail, Message
 from flask_table import Table, Col
 import urllib
-import urllib2
+
 
 
 app = Flask(__name__)
